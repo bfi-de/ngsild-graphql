@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGSI visualization</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/sharedStyles.css">
+</head>
+<body>
+  <div class="main-grid">
+    <div id="menu">
+        <div id="codeBlock">
+          <fieldset class="query-field">
+              <legend>Query</legend>
+              <textarea id="query" cols="50" rows="15" hidden="true">
+              </textarea>
+              <pre><code></code></pre>
+          </fieldset>
+          <div id="errors" class="errors" hidden="true"></div>
+        </div>
+        <div id="buttonMenu"></div>
+        <br>
+        <div id="optionsGrid"></div>
+    </div>
+    <div id="graph" class="graph-container">
+    </div>
+  </div>
+  <dialog id="styleMenuDialog">
+    <ngsildgraphviz-style-menu></ngsildgraphviz-style-menu>
+  </dialog>
+  <dialog id="notesMenuDialog">
+    <ngsildgraphviz-notes-menu></ngsildgraphviz-notes-menu>
+  </dialog>
+</body>

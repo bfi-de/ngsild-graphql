@@ -1,0 +1,47 @@
+[
+    {
+        "id": "urn:ngsi-ld:ContinuousCastingMachine:ContinuousCastingMachine1",
+        "type": "ContinuousCastingMachine",
+        "description": {
+            "type": "Property",
+            "value": "Sample steel casting machine"
+        },
+        "strands": {
+            "type": "Property",
+            "value": 3
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:HotRollingMill:HotRollingMill1",
+        "type": "HotRollingMill"
+    },
+    {
+        "id": "urn:ngsi-ld:Furnace:ReheatingFurnace1",
+        "type": "Furnace",
+        "description": {
+            "type": "Property",
+            "value": "Reheating furnace for the hot rolling mill"
+        },
+        "isPartOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:HotRollingMill:HotRollingMill1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:RollingMill:RoughingMill1",
+        "type": "RollingMill",
+        "isPartOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:HotRollingMill:HotRollingMill1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Cutter:Cutter1",
+        "type": "Cutter",
+        "isPartOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:HotRollingMill:HotRollingMill1"
+        }
+    }
+
+]

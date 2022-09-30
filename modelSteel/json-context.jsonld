@@ -1,0 +1,1019 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "capri-steel": "https://capri-project.com/model/steel/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "Area": "capri-steel:Area",
+        "Bar": "capri-steel:Bar",
+        "Batch": "capri-steel:Batch",
+        "Billet": "capri-steel:Billet",
+        "Bloom": "capri-steel:Bloom",
+        "BuildingSpace": "capri-steel:BuildingSpace",
+        "Coating": "capri-steel:Coating",
+        "Coil": "capri-steel:Coil",
+        "Coiler": "capri-steel:Coiler",
+        "ComplexTransformation": "capri-steel:ComplexTransformation",
+        "ContinuousCastingMachine": "capri-steel:ContinuousCastingMachine",
+        "Cooling": "capri-steel:Cooling",
+        "CoolingBed": "capri-steel:CoolingBed",
+        "Cutter": "capri-steel:Cutter",
+        "Cutting": "capri-steel:Cutting",
+        "Decoiler": "capri-steel:Decoiler",
+        "Descaler": "capri-steel:Descaler",
+        "Descaling": "capri-steel:Descaling",
+        "Factory": "capri-steel:Factory",
+        "FeatureOfInterest": "capri-steel:FeatureOfInterest",
+        "FinishingLine": "capri-steel:FinishingLine",
+        "Furnace": "capri-steel:Furnace",
+        "Heating": "capri-steel:Heating",
+        "HotRollingMill": "capri-steel:HotRollingMill",
+        "Item": "capri-steel:Item",
+        "ItemBatch": "capri-steel:ItemBatch",
+        "LadleHeat": "capri-steel:LadleHeat",
+        "MaterialBatch": "capri-steel:MaterialBatch",
+        "ProductionEquipment": "capri-steel:ProductionEquipment",
+        "ProductionResource": "capri-steel:ProductionResource",
+        "Rolling": "capri-steel:Rolling",
+        "RollingMill": "capri-steel:RollingMill",
+        "ShapeTransformation": "capri-steel:ShapeTransformation",
+        "Shears": "capri-steel:Shears",
+        "Site": "capri-steel:Site",
+        "Slab": "capri-steel:Slab",
+        "Storage": "capri-steel:Storage",
+        "SurfaceTreatment": "capri-steel:SurfaceTreatment",
+        "TemperatureTransformation": "capri-steel:TemperatureTransformation",
+        "Transformation": "capri-steel:Transformation",
+        "WorkSpace": "capri-steel:WorkSpace",
+        "Yard": "capri-steel:Yard",
+        "actualComposition": "capri-steel:actualComposition",
+        "alternateName": {
+            "@id": "capri-steel:alternateName",
+            "@type": "xsd:string"
+        },
+        "barId": {
+            "@id": "capri-steel:barId",
+            "@type": "xsd:string"
+        },
+        "barTrackingCode": {
+            "@id": "capri-steel:barTrackingCode",
+            "@type": "xsd:string"
+        },
+        "billetTrackingCode": {
+            "@id": "capri-steel:billetTrackingCode",
+            "@type": "xsd:string"
+        },
+        "consistsOf": {
+            "@id": "capri-steel:consistsOf",
+            "@type": "xsd:array"
+        },
+        "consistsOfMaterial": {
+            "@id": "capri-steel:consistsOfMaterial",
+            "@type": "xs:anyURI"
+        },
+        "contains": {
+            "@id": "capri-steel:contains",
+            "@type": "xsd:array"
+        },
+        "creates": {
+            "@id": "capri-steel:creates",
+            "@type": "xsd:array"
+        },
+        "dataProvider": {
+            "@id": "capri-steel:dataProvider",
+            "@type": "xsd:string"
+        },
+        "dateCreated": {
+            "@id": "capri-steel:dateCreated",
+            "@type": "xs:dateTime"
+        },
+        "dateModified": {
+            "@id": "capri-steel:dateModified",
+            "@type": "xs:dateTime"
+        },
+        "dateObserved": {
+            "@id": "capri-steel:dateObserved",
+            "@type": "xs:dateTime"
+        },
+        "deoxAl": {
+            "@id": "capri-steel:deoxAl",
+            "@type": "xsd:number"
+        },
+        "deoxSi": {
+            "@id": "capri-steel:deoxSi",
+            "@type": "xsd:number"
+        },
+        "deoxSiC": {
+            "@id": "capri-steel:deoxSiC",
+            "@type": "xsd:number"
+        },
+        "deoxSiMn": {
+            "@id": "capri-steel:deoxSiMn",
+            "@type": "xsd:number"
+        },
+        "description": {
+            "@id": "capri-steel:description",
+            "@type": "xsd:string"
+        },
+        "grade": {
+            "@id": "capri-steel:grade",
+            "@type": "xsd:string"
+        },
+        "hasSpace": {
+            "@id": "capri-steel:hasSpace",
+            "@type": "xsd:array"
+        },
+        "heatInSequence": {
+            "@id": "capri-steel:heatInSequence",
+            "@type": "xsd:integer"
+        },
+        "heatTypeInSequence": {
+            "@id": "capri-steel:heatTypeInSequence",
+            "@type": "xsd:string"
+        },
+        "heatnumber": {
+            "@id": "capri-steel:heatnumber",
+            "@type": "xsd:string"
+        },
+        "heatsPerSequence": {
+            "@id": "capri-steel:heatsPerSequence",
+            "@type": "xsd:integer"
+        },
+        "identifiedWithNext": {
+            "@id": "capri-steel:identifiedWithNext",
+            "@type": "xsd:array"
+        },
+        "identifiedWithPrevious": {
+            "@id": "capri-steel:identifiedWithPrevious",
+            "@type": "xsd:array"
+        },
+        "isPartOf": {
+            "@id": "capri-steel:isPartOf",
+            "@type": "xs:anyURI"
+        },
+        "length": {
+            "@id": "capri-steel:length",
+            "@type": "xsd:number"
+        },
+        "madeFrom": {
+            "@id": "capri-steel:madeFrom",
+            "@type": "xs:anyURI"
+        },
+        "name": {
+            "@id": "capri-steel:name",
+            "@type": "xsd:string"
+        },
+        "ordernumber": {
+            "@id": "capri-steel:ordernumber",
+            "@type": "xsd:string"
+        },
+        "overallQualityRating": {
+            "@id": "capri-steel:overallQualityRating",
+            "@type": "xsd:string"
+        },
+        "owner": {
+            "@id": "capri-steel:owner",
+            "@type": "xsd:array"
+        },
+        "processedBy": {
+            "@id": "capri-steel:processedBy",
+            "@type": "xsd:array"
+        },
+        "produces": {
+            "@id": "capri-steel:produces",
+            "@type": "xsd:array"
+        },
+        "productId": {
+            "@id": "capri-steel:productId",
+            "@type": "xsd:string"
+        },
+        "seeAlso": {
+            "@id": "capri-steel:seeAlso",
+            "@type": "xsd:undefined"
+        },
+        "source": {
+            "@id": "capri-steel:source",
+            "@type": "xsd:string"
+        },
+        "stirringDurationAfterVacuum": {
+            "@id": "capri-steel:stirringDurationAfterVacuum",
+            "@type": "xsd:number"
+        },
+        "strands": {
+            "@id": "capri-steel:strands",
+            "@type": "xsd:integer"
+        },
+        "transformations": {
+            "@id": "capri-steel:transformations",
+            "@type": "xsd:array"
+        },
+        "vacuumDegasDuration": {
+            "@id": "capri-steel:vacuumDegasDuration",
+            "@type": "xsd:number"
+        }
+    },
+    "@graph": [
+        {
+            "@id": "capri-steel:Area",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4BLDG model for an area."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Area"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Batch",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for resource batches."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Batch"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:BuildingSpace",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4BLDG model for a building space."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "BuildingSpace"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Factory",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for a factory."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Factory"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:FeatureOfInterest",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF model for a FeatureOfInterest."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "FeatureOfInterest"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Item",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Production items"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Item"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ItemBatch",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Production item batches"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ItemBatch"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:MaterialBatch",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for material batches."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "MaterialBatch"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ProductionEquipment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for production equipment/machines."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ProductionEquipment"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ProductionResource",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for production resources."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ProductionResource"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Site",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4BLDG model for a site."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Site"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Transformation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Model for transformations applied by a machine to some item(s). Used only for properties of the relationship processedBy on ProductionResources."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Transformation"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:WorkSpace",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "SAREF4INMA model for work spaces."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "WorkSpace"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Bar",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a steel bar"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Bar"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Billet",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a steel billet"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Billet"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Bloom",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a steel bloom"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Bloom"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Coil",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a steel coil"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Coil"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:LadleHeat",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a heat, i.e. a batch of liquid steel for processing in a casting machine."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "LadleHeat"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Slab",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a steel slab"
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Slab"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Coiler",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Coiler model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Coiler"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:CoolingBed",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Cooling bed model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "CoolingBed"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Cutter",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Cutter model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Cutter"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ContinuousCastingMachine",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a continuous casting machine."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ContinuousCastingMachine"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Decoiler",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Decoiler model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Decoiler"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Descaler",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Descaling unit model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Descaler"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:FinishingLine",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Finishing line model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "FinishingLine"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Furnace",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Furnace model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Furnace"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:HotRollingMill",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Hot rolling mill model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "HotRollingMill"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:RollingMill",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Rolling mill model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "RollingMill"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Shears",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Shears model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Shears"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Storage",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Generic storage model."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Storage"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Yard",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "Yard used for storage of items or material."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Yard"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Coating",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for coating."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Coating"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ComplexTransformation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a temperature transformation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ComplexTransformation"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Cooling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for cooling."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Cooling"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Cutting",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a cutting process."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Cutting"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Descaling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for descaling."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Descaling"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Heating",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for heating."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Heating"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:Rolling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for rolling."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "Rolling"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:ShapeTransformation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a shape transformation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "ShapeTransformation"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:SurfaceTreatment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a surface treatment."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "SurfaceTreatment"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        },
+        {
+            "@id": "capri-steel:TemperatureTransformation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": [
+                {
+                    "@language": "en",
+                    "@value": "CAPRI model for a temperature transformation."
+                }
+            ],
+            "rdfs:label": [
+                {
+                    "@language": "en",
+                    "@value": "TemperatureTransformation"
+                }
+            ],
+            "rdfs:subClassOf": {
+                "@id": "schema:Thing"
+            }
+        }
+    ]
+}

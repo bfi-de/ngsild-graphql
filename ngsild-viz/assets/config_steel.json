@@ -1,0 +1,7 @@
+{
+    "debug": true,
+    "responseDebugger": true,
+    "initialLayout": "custom",
+    "initialQuery": "{\n  ProductionEquipments {\n    id\n    type\n    isPartOf {\n      id\n      type\n    }\n  }\n}",
+    "initialGroups": [["ContinuousCastingMachine", "HotRollingMill"]]
+}

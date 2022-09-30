@@ -1,0 +1,7 @@
+{
+    "debug": true,
+    "responseDebugger": true,
+    "initialLayout": "custom",
+    "initialQuery": "{\n  Rooms {\n    id\n    type\n    isRoomOf {\n      id\n      type\n      ceilingHeight\n      isStoreyOf {\n        id\n        type\n        constructed\n      }\n    }\n  }\n}",
+    "initialGroups": [["Building"], ["Storey"], ["Room"]]
+}

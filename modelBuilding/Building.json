@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "2020-12",
+    "$id": "https://example.com/model/Building.json",
+    "title": "Building",
+    "description": "A model for buildings",
+    "type": "object",
+    "x-ngsi": {
+        "uri-prefix": "https://example.com/model/"
+    },
+    "properties": {
+        "id": { "type": "string", "format": "uri" },
+        "type": { "type": "string", "enum": ["Building"] },
+        "constructed": { "type": "integer", "description": "Year of construction"}
+    }, 
+    "required": ["id", "type"]
+
+}

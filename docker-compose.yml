@@ -1,0 +1,86 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:5
+    container_name: mongo
+    command: --nojournal
+    networks:
+      - mongo
+
+  orion:
+    image: fiware/orion-ld
+    container_name: orion
+    ports:
+      - "1026:1026"
+    networks:
+      - mongo
+      - context
+      - orion
+    depends_on:
+      - mongo
+    command: -dbhost mongo
+
+  context:
+    image: httpd:2.4
+    container_name: context
+    volumes:
+      - ${MODEL_FOLDER:-./modelBuilding}:/usr/local/apache2/htdocs/:ro
+    ports: # for debugging
+      - "3004:80"
+    networks: 
+      - context
+    
+  graphql:
+    build: ./ngsild-graphql
+    container_name: ngsild-graphql
+    environment:
+      - RESOLUTION_METHOD=fiware
+      - BASE_FOLDER=./model
+      - NGSI_BASE_URL=http://orion:1026
+      - CONTEXT_URL_BROKER=http://context/ngsi-context.jsonld
+      - CONTEXT_URL=http://context/ngsi-context.jsonld
+      - FILTERED_FILE_NAMES=${FILTERED_FILE_NAMES}
+      - FILTERED_FOLDER_NAMES=${FILTERED_FOLDER_NAMES}
+      - CORS_ORIGIN=${ORION_CORS:-__ALL}
+    depends_on:
+      - context
+      - orion
+    volumes:
+      - ${MODEL_FOLDER:-./modelBuilding}:/usr/src/app/model:ro
+    networks:
+      - context
+      - orion
+    ports:
+      - "4000:4000"
+      
+  ngsild-viz:
+    build: 
+        context: ./ngsild-viz
+        args:
+            SERVER: ${GRAPHQL_SERVER_PUBLIC:-http://localhost:4000/graphql}
+            GROUPS: ${GRAPHQL_VIZ_GROUPS:-[["Building"], ["Storey"], ["Room"]]}
+            QUERY: ${GRAPHQL_VIZ_QUERY:-{__n  Rooms {__n    id__n    type__n    isRoomOf {__n      id__n      type__n      ceilingHeight__n      isStoreyOf {__n        id__n        type__n        constructed__n      }__n    }__n  }__n}}
+    container_name: ngsild-viz
+    depends_on:
+      - graphql
+    ports:
+      - "8080:8080"
+  
+  ngsild-init:
+    image: curlimages/curl:latest
+    container_name: ngsild-init
+    depends_on: 
+      - orion
+    volumes:
+      - ${MODEL_FOLDER:-./modelBuilding}:/model:ro
+    networks:
+      - orion
+    command: ["sh", "-c", "sleep 10 && curl -X POST -H 'Content-Type: application/json' -H 'Link: <http://context/ngsi-context.jsonld>; rel=\"http://www.w3.org/ns/json-ld#context\"; type=\"application/ld+json\"' -d @/model/sample.json http://orion:1026/ngsi-ld/v1/entityOperations/create"]
+    
+    
+networks:
+  mongo:
+  context:
+  orion:
+

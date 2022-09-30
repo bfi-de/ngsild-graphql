@@ -1,0 +1,21 @@
+.main-grid {
+    display: flex;
+    column-gap: 0.5em;
+}
+
+.graph-container {
+    height: 95vh;
+    width: 100%;
+    z-index: 1; 
+}
+
+.query-field {
+    border-width: 3px;
+    margin-right: 5em;
+}
+
+dialog {
+    border: solid 1px darkblue;
+    border-radius: 2px;
+}
+

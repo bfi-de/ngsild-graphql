@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "2020-12",
+    "$id": "https://example.com/model/Room.json",
+    "title": "Room",
+    "description": "A model for rooms",
+    "type": "object",
+    "x-ngsi": {
+        "uri-prefix": "https://example.com/model/"
+    },
+    "properties": {
+        "id": { "type": "string", "format": "uri" },
+        "type": { "type": "string", "enum": ["Room"] },
+        "isRoomOf": { "type": "string", "format": "uri",
+            "description": "Relationship. A relationship indicating the ID of the Storey this Room belongs to.", "x-ref-type": "Storey" }
+    }, 
+    "required": ["id", "type"]
+
+}

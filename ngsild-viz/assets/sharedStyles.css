@@ -1,0 +1,4 @@
+
+input[type=button]:not([disabled]):hover {
+    cursor: pointer;
+}

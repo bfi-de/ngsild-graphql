@@ -1,0 +1,65 @@
+.menu {
+    position: relative;
+    width: 36em;
+    height: 95vh;
+    border-right: 2px solid black;
+    z-index: 100;
+}
+
+.menu>* {
+    padding-left: 1em;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    margin-top: 1em;
+    max-width: 35em;
+    row-gap: 0.5em;
+}
+
+.query-block {
+    max-width: 37em;
+    max-height: 30em;
+    overflow: scroll;
+}
+
+.full-width {
+    display: inline-block;
+    width: 100%;
+
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.errors {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.flex-vertical {
+    flex-direction: column;
+}
+
+.flex-vertical>input {
+    max-width: 8em;   
+}
+
+.menu-hidden {
+    width: 10em;
+}

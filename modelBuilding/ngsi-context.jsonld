@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "type": "@type",
+        "id": "@id",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+        "fiware": "https://uri.fiware.org/ns/data-models#",
+        "schema": "https://schema.org/",
+        "buildings": "https://example.com/model/",
+        "Building": "buildings:Building",
+        "Room": "buildings:Room",
+        "Storey": "buildings:Storey",
+        "ceilingHeight": "buildings:ceilingHeight",
+        "constructed": "buildings:constructed",
+        "isRoomOf": "buildings:isRoomOf",
+        "isStoreyOf": "buildings:isStoreyOf"
+    }
+}

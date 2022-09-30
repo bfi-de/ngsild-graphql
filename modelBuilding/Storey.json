@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$schemaVersion": "2020-12",
+    "$id": "https://example.com/model/Storey.json",
+    "title": "Storey",
+    "description": "A model for storeys",
+    "type": "object",
+    "x-ngsi": {
+        "uri-prefix": "https://example.com/model/"
+    },
+    "properties": {
+        "id": { "type": "string", "format": "uri" },
+        "type": { "type": "string", "enum": ["Storey"] },
+        "ceilingHeight": { "type": "number", "description": "Unit: m"},
+        "isStoreyOf": { "type": "string", "format": "uri",
+            "description": "Relationship. A relationship indicating the ID of the Building this Storey belongs to.", "x-ref-type": "Building" }
+    }, 
+    "required": ["id", "type"]
+
+}

@@ -1,0 +1,140 @@
+[
+    {
+        "id": "urn:ngsi-ld:Room:RoomA1",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyA1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomA2",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyA1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomA3",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyA2"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomA4",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyA2"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Storey:StoreyA1",
+        "type": "Storey",
+        "ceilingHeight": {
+            "type": "Property",
+            "value": 2.5,
+            "unitCode": "MTR"
+        },
+        "isStoreyOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:BuildingA"
+        }
+
+    },
+    {
+        "id": "urn:ngsi-ld:Storey:StoreyA2",
+        "type": "Storey",
+        "isStoreyOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:BuildingA"
+        }
+        
+    },
+    {
+        "id": "urn:ngsi-ld:Building:BuildingA",
+        "type": "Building",
+        "constructed": {
+            "type": "Property",
+            "value": 1952
+        }
+    },
+    
+    {
+        "id": "urn:ngsi-ld:Room:RoomB1",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyB1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomB2",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyB1"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomB3",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyB2"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomB4",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyB3"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Room:RoomB5",
+        "type": "Room",
+        "isRoomOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Storey:StoreyB3"
+        }
+    },
+    {
+        "id": "urn:ngsi-ld:Storey:StoreyB1",
+        "type": "Storey",
+        "isStoreyOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:BuildingB"
+        }
+
+    },
+    {
+        "id": "urn:ngsi-ld:Storey:StoreyB2",
+        "type": "Storey",
+        "isStoreyOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:BuildingB"
+        }
+
+    },
+    {
+        "id": "urn:ngsi-ld:Storey:StoreyB3",
+        "type": "Storey",
+        "isStoreyOf": {
+            "type": "Relationship",
+            "object": "urn:ngsi-ld:Building:BuildingB"
+        }
+
+    },{
+        "id": "urn:ngsi-ld:Building:BuildingB",
+        "type": "Building",
+        "constructed": {
+            "type": "Property",
+            "value": 1912
+        }
+    }
+]
