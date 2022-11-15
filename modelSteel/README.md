@@ -4,11 +4,11 @@ Use the context-file-generator from here: https://github.com/FIWARE/tutorials.Un
 
 # Serve Swagger UI
 
-Run
+In this folder, run
 
 ```
-./serverSwagger.sh
+docker run -d --rm --name swagger -p 8080:8080 -v ${PWD}:/model -e SWAGGER_JSON=/model/openapi.yml swaggerapi/swagger-ui
 ```
 
-Docker required.
+Docker required. In the git Bash on Windows, prepend `MSYS_NO_PATHCONV=1 `.
 

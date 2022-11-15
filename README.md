@@ -103,7 +103,16 @@ This is a visualization tool for the NGSI-LD property graph, available at http:/
 * *ngsild-graphql*: Contains the source code for the GraphQL interface
 * *ngsild-viz*: Contains the source code for the graph visualization
 
-## Miscellaneous
+## Run Swagger server
+
+In one of the model subfolders, run
+
+```
+docker run -d --rm --name swagger -p 8080:8080 -v ${PWD}:/model -e SWAGGER_JSON=/model/openapi.yml swaggerapi/swagger-ui
+```
+
+In the git Bash on Windows, prepend `MSYS_NO_PATHCONV=1 `.
+
 
 ## GraphQL model introspection
 
