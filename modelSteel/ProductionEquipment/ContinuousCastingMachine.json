@@ -8,10 +8,10 @@
     "x-ngsi": {
         "uri-prefix": "https://capri-project.com/model/steel/"
     },
-    "x-extends": "https://capri-project.com/model/steel/ProductionEquipment",
+    "x-extends": "https://capri-project.com/model/steel/WorkSpace",
     "allOf": [
         {
-            "$ref": "../ProductionEquipment.json"
+            "$ref": "./WorkSpace.json"
         },{
             "properties": {
                 "type": { "type": "string"},
