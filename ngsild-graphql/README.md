@@ -43,6 +43,34 @@ FILTERED_FILE_NAMES=ChemicalComposition
 FILTER_NESTING_LEVEL=4
 ```
 
+## Create a Docker image
+
+See https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+
+Build:
+
+```bash
+docker build -t ghcr.io/bfi-de/ngsild-graphql .
+```
+
+Tag image (adapt version):
+
+```bash
+docker tag ghcr.io/bfi-de/ngsild-graphql ghcr.io/bfi-de/ngsild-graphql:0.1.0
+```
+
+Publish image:
+
+ * Create a personal access token (classic) here: https://github.com/settings/tokens/new?scopes=write:packages (see https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry)
+
+
+```bash
+docker login ghcr.io -u <GITHUB_USER> --password <ACCESS_TOKEN>
+docker push ghcr.io/bfi-de/ngsild-graphql:0.1.0
+docker push ghcr.io/bfi-de/ngsild-graphql:latest
+```
+
+Alternatively, leave out the version tag and provide the `--all-tags` option. Make sure not to overwrite old images this way. See https://docs.docker.com/engine/reference/commandline/push/.  
 
 ## Open
 

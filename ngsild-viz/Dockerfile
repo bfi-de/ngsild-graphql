@@ -1,6 +1,11 @@
-FROM node:18
+FROM node:18-slim
+LABEL org.opencontainers.image.source=https://github.com/bfi-de/ngsild-graphql
+LABEL org.opencontainers.image.description="A visulization for the NGSI-LD GraphQL interface"
+LABEL org.opencontainers.image.licenses=MIT
 WORKDIR /usr/src/app
 COPY package.json ./
+# why is that required?
+RUN apt-get update && apt-get install -y git  
 RUN npm install
 COPY . .
 ENV PORT=${PORT:-8080}
