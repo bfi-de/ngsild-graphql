@@ -1,6 +1,6 @@
 {
   "name": "ngsild-viz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A visualization for NGSI-LD property graphs, based on ngsild-graphql",
   "type": "module",
   "scripts": {
