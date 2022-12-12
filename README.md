@@ -4,6 +4,8 @@
 
 This repository provides a GraphQL interface for FIWARE/NGSI-LD context brokers. Instead of using the NGSI-LD API directly, it allows application developers to specify their data requirements in terms of GraphQL templates. Multiple NGSI-LD entities linked by relationships can thus be retrieved in a single query, instead of one query per entity. A rudimentary visualization tool is included, as well.
 
+Zenodo link: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7428717.svg)](https://doi.org/10.5281/zenodo.7428717)
+
 ## Run samples
 
 The repository contains two small sample setups, each including a data model and sample data. Running the samples requires docker and docker-compose. The Buildings data model covers rooms, storeys and buildings, the Steel model includes certain entities relevant to the steel production, including production equipment, such as a continuous casting machine, and physical items, such as steel bars. The building model is inspired by the [Building Topology Ontology (BOT)](https://www.semantic-web-journal.net/content/bot-building-topology-ontology-w3c-linked-building-data-group-0), whereas the steel model is loosely based on the [SAREF4INMA ontology](https://saref.etsi.org/saref4inma).
